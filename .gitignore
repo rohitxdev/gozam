@@ -1,0 +1,12 @@
+.DS_Store
+.env
+
+# client
+node_modules
+.react-router
+build
+
+# server
+tmp
+app.db
+app.db*

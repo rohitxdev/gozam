@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+	--font-sans: "Rubik", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	--font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+@layer base {
+	button,
+	label {
+		@apply cursor-pointer;
+	}
+	pre {
+		@apply whitespace-break-spaces border border-neutral-400 rounded text-sm shadow-md p-4;
+	}
+}

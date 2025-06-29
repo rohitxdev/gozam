@@ -1,0 +1,65 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.8.2/schema.json",
+	"organizeImports": {
+		"enabled": true
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"correctness": {
+				"noUnusedImports": "warn",
+				"useExhaustiveDependencies": "warn"
+			},
+			"style": {
+				"noNonNullAssertion": "off",
+				"noParameterAssign": "off",
+				"useSelfClosingElements": {
+					"fix": "safe",
+					"level": "warn"
+				},
+				"useTemplate": {
+					"fix": "safe",
+					"level": "warn"
+				},
+				"noUnusedTemplateLiteral": {
+					"fix": "safe",
+					"level": "warn"
+				}
+			},
+			"nursery": {
+				"useSortedClasses": {
+					"fix": "safe",
+					"level": "warn",
+					"options": {}
+				}
+			},
+			"a11y": {
+				"useButtonType": "off",
+				"noSvgWithoutTitle": "off",
+				"noNoninteractiveTabindex": "off",
+				"useMediaCaption": "off"
+			},
+			"security": {
+				"noDangerouslySetInnerHtml": "off"
+			},
+			"complexity": {
+				"useArrowFunction": "warn",
+				"useOptionalChain": {
+					"level": "warn",
+					"fix": "safe"
+				},
+				"useLiteralKeys": {
+					"level": "warn",
+					"fix": "safe"
+				}
+			}
+		}
+	},
+	"formatter": {
+		"indentWidth": 4,
+		"lineWidth": 150,
+		"indentStyle": "tab",
+		"enabled": true
+	}
+}
