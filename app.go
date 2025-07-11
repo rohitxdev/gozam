@@ -85,7 +85,6 @@ func computeAudioFingerprints(file io.ReadSeeker) []Fingerprint {
 	}
 
 	// 4. Compute spectrogram.
-	// A spectrogram is a visual representation of the spectrum of frequencies of a signal as it varies with time.
 	frameSize := 2048
 	hopSize := frameSize / 2
 	numFrames := (len(samples) - frameSize) / hopSize
@@ -113,8 +112,7 @@ func computeAudioFingerprints(file io.ReadSeeker) []Fingerprint {
 		}
 	}
 	avgMagnitude /= float64(len(spectrogram) * len(spectrogram[0]))
-	peakThreshold := avgMagnitude * 1.5
-	peakThresholdDb := toDecibel(peakThreshold)
+	peakThresholdDb := toDecibel(avgMagnitude * 2)
 	neighborhoodSize := 8
 
 	// 5. Find peaks

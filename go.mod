@@ -17,7 +17,7 @@ require (
 	golang.org/x/sys v0.33.0 // indirect
 	modernc.org/libc v1.65.10 // indirect
 	modernc.org/mathutil v1.7.1 // indirect
-	modernc.org/memory v1.11.0 // indirect
+	modernc.org/memory v1.11.0 // indirectir
 )
 
 require (
@@ -35,7 +35,7 @@ require (
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	golang.org/x/image v0.25.0 // indirect
 	golang.org/x/text v0.23.0 // indirect
-	gonum.org/v1/gonum v0.16.0 // indirect
+	gonum.org/v1/gonum v0.16.0
 	gonum.org/v1/plot v0.16.0 // indirect
 	modernc.org/sqlite v1.38.0
 )

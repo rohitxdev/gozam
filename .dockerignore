@@ -1,0 +1,11 @@
+# .dockerignore
+node_modules
+client/node_modules
+client/.next
+client/dist
+client/build
+build
+.git
+*.log
+*.cache
+.DS_Store

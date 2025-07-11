@@ -1,0 +1,11 @@
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: dev
+    volumes:
+      - .:/app       # Mount your local project into the container
+    ports:
+      - 8080:8080 
+  
