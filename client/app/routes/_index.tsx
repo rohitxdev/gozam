@@ -3,7 +3,7 @@ import { AudioSave } from "~/components/audio-save";
 import { AudioList } from "~/components/audio-list";
 
 export function meta() {
-	return [{ title: "New React Router App" }, { name: "description", content: "Welcome to React Router!" }];
+	return [{ title: "Gozam" }, { name: "description", content: "An implementation of Shazam's audio recognition algorithm." }];
 }
 
 export default function Home() {
