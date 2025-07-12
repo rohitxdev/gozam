@@ -117,6 +117,8 @@ export const AudioSearch = () => {
 			>
 				{isRecording ? <LuSquare /> : <LuMic />}
 			</button>
+				{isRecording && <p className="text-neutral-500">Bring your audio source close to the microphone.</p>}
+
 			{!isRecording && wavFile && (
 				<div className="mt-8 grid justify-items-center gap-4">
 					<audio src={URL.createObjectURL(wavFile)} controls />
