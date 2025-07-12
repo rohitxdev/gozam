@@ -49,9 +49,7 @@ export const AudioSave = () => {
 	const downloadYoutubeVideo = useMutation({
 		mutationKey: ["downloadYoutubeVideo"],
 		mutationFn: async (url: string) => {
-			const apiEndpoint = new URL(API_ROUTES.download.youtube);
-			apiEndpoint.searchParams.set("url", url);
-			const res = await fetch(apiEndpoint);
+			const res = await fetch(`${API_ROUTES.download.youtube}?url=${encodeURIComponent(url)}`);
 			if (!res.ok) throw Error("failed to download yt video");
 
 			const fileName = getFileNameFromHeaders(res.headers);
@@ -66,6 +64,9 @@ export const AudioSave = () => {
 		onSuccess: ({ fileName, blob }) => {
 			const file = new File([blob], fileName);
 			setDownloadedAudioFile(file);
+		},
+		onSettled: () => {
+			queryClient.invalidateQueries({ queryKey: ["listAudio"] });
 		},
 	});
 
