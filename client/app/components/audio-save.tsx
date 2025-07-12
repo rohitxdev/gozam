@@ -119,8 +119,8 @@ export const AudioSave = () => {
 					<p>{downloadedAudioFile.name}</p>
 				</div>
 			)}
-			{wavFiles.length > 0 ||
-				(downloadedAudioFile && (
+			{(wavFiles.length > 0 ||
+				downloadedAudioFile) && (
 					<div className="mt-8 grid items-center justify-items-center gap-4">
 						<div className="grid w-xl justify-items-center gap-2">
 							{wavFiles.map((file) => (
@@ -145,7 +145,7 @@ export const AudioSave = () => {
 							)}
 						</button>
 					</div>
-				))}
+				)}
 		</div>
 	);
 };
