@@ -69,6 +69,8 @@ func downloadYoutubeVideo(url string) (*YoutubeVideo, error) {
 		defer wg.Done()
 
 		cmd := exec.CommandContext(ctx, "yt-dlp",
+			"--cookies-from-browser", "chrome",
+			"--js-runtimes", "node",
 			"-f", "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best",
 			"--merge-output-format", "mp4",
 			"--no-playlist",
