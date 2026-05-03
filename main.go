@@ -67,11 +67,23 @@ func downloadYoutubeVideo(url string) (*YoutubeVideo, error) {
 
 	go func() {
 		defer wg.Done()
-		cmd := exec.CommandContext(ctx, "yt-dlp", "-f", "best[ext=mp4]", "--no-playlist", "-o", filePath, url)
+
+		cmd := exec.CommandContext(ctx, "yt-dlp",
+			"-f", "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best",
+			"--merge-output-format", "mp4",
+			"--no-playlist",
+			"-o", filePath,
+			url,
+		)
+
+		var stderr bytes.Buffer
+		cmd.Stderr = &stderr
+
 		if err := cmd.Run(); err != nil {
-			videoErr = fmt.Errorf("failed to download video: %w", err)
+			videoErr = fmt.Errorf("failed to download video: %w | stderr: %s", err, stderr.String())
 			return
 		}
+
 		data, err := os.ReadFile(filePath)
 		if err != nil {
 			videoErr = fmt.Errorf("failed to read downloaded video file: %w", err)
